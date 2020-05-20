@@ -1,0 +1,27 @@
+﻿<Window x:Class="AsyncStoryPrototype.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AsyncStoryPrototype"
+        xmlns:story="clr-namespace:AsyncStoryPrototype.StoryCore"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="StoryTextBlock" Grid.Row="0" />
+
+        <ItemsControl x:Name="MenuItemsControl" Grid.Row="1">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate DataType="{x:Type story:MenuChoice}">
+                    <Button Content="{Binding Text}" Tag="{Binding}" Click="MenuChoiceButton_Click" />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Grid>
+</Window>
