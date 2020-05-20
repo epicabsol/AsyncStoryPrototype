@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AsyncStoryPrototype.StoryCore
+namespace AsyncStory.Core
 {
     /// <summary>
     /// The interface implemented by a User Interface that hosts a story.

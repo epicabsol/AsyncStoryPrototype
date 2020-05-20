@@ -1,4 +1,4 @@
-﻿using AsyncStoryPrototype.StoryCore;
+﻿using AsyncStory.Core;
 using AsyncStoryPrototype.World;
 using System;
 using System.Collections.Generic;

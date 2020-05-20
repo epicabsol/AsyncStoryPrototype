@@ -5,7 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AsyncStoryPrototype.StoryCore
+namespace AsyncStory.Core
 {
     /// <summary>
     /// A task that can be completed at some other time.

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AsyncStoryPrototype.StoryCore
+namespace AsyncStory.Core
 {
     public class ActionMenuChoice : MenuChoice
     {

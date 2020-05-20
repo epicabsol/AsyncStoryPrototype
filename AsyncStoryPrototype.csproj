@@ -55,10 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="StoryCore\ActionMenuChoice.cs" />
-    <Compile Include="StoryCore\IStoryHost.cs" />
-    <Compile Include="StoryCore\MenuChoice.cs" />
-    <Compile Include="StoryCore\StoryTask.cs" />
     <Compile Include="World\Player.cs" />
     <Compile Include="World\StoryContext.cs" />
     <Page Include="MainWindow.xaml">
@@ -100,6 +96,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="AsyncStory.Core\AsyncStory.Core.csproj">
+      <Project>{01c23f47-e318-4c93-a887-cf563c2a29fc}</Project>
+      <Name>AsyncStory.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
