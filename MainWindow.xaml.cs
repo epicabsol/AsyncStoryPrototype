@@ -63,7 +63,7 @@ namespace AsyncStoryPrototype
         public async Task RunMenu(ActionMenuChoice[] choices)
         {
             ActionMenuChoice choice = await ShowMenu(choices);
-            await choice.Handler();
+            await choice.Invoke();
         }
 
         public void WriteLine(string text)

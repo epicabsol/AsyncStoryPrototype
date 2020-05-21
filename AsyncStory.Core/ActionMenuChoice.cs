@@ -8,11 +8,19 @@ namespace AsyncStory.Core
 {
     public class ActionMenuChoice : MenuChoice
     {
-        public Func<Task> Handler { get; }
+        private Func<Task> Handler { get; }
 
         public ActionMenuChoice(string text, Func<Task> handler) : base(text)
         {
             this.Handler = handler;
+        }
+
+        public async Task Invoke()
+        {
+            if (Handler != null)
+            {
+                await Handler();
+            }
         }
     }
 }
