@@ -167,7 +167,31 @@
         
         <!-- Right Column -->
         <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
             
+            <!-- Right Panel -->
+            <Border Background="{StaticResource ThemeForeground}">
+                
+            </Border>
+
+            <!-- Button Pagination Controls -->
+            <Grid Grid.Row="1" Margin="0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Button Margin="0 0 10 0" Padding="7" IsEnabled="False">
+                    PrevPage
+                </Button>
+
+                <Button Grid.Column="1" Margin="0 0 10 0" Padding="7" IsEnabled="False">
+                    NextPage
+                </Button>
+            </Grid>
         </Grid>
     </Grid>
 </Window>
