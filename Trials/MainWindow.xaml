@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uicomponents="clr-namespace:Trials.UIComponents"
         xmlns:local="clr-namespace:Trials"
         mc:Ignorable="d"
         Title="MainWindow" Height="561.562" Width="935">
@@ -51,50 +52,8 @@
             <Border Grid.Row="1" Background="{StaticResource ThemeForeground}" />
             
             <!-- System Controls (Menu, SaveLoad, LevelUp, Appearance...) -->
-            <Border Grid.Row="2" Background="{StaticResource ThemeForeground}" Padding="10 5">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1*" />
-                        <RowDefinition Height="1*" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="1*" />
-                        <ColumnDefinition Width="2*" />
-                    </Grid.ColumnDefinitions>
-
-                    <Grid.Resources>
-                        <Style TargetType="Button" BasedOn="{StaticResource SystemButton}">
-                            <Setter Property="Margin" Value="1" />
-                            <Setter Property="Width" Value="32px" />
-                            <Setter Property="Height" Value="32px" />
-                        </Style>
-                    </Grid.Resources>
-
-                    <Button>
-                        Menu
-                    </Button>
-                    <Button Grid.Column="1">
-                        Data
-                    </Button>
-                    <Button Grid.Column="2">
-                        Down?
-                    </Button>
-                    <Button Grid.Column="3" Grid.RowSpan="2" Width="66px" Height="66px">
-                        Appearance
-                    </Button>
-
-                    <Button Grid.Row="1" Grid.Column="0">
-                        Messg.
-                    </Button>
-                    <Button Grid.Row="1" Grid.Column="1">
-                        Perks
-                    </Button>
-                    <Button Grid.Row="1" Grid.Column="2">
-                        LvUp
-                    </Button>
-                </Grid>
+            <Border Grid.Row="2" Background="{StaticResource ThemeForeground}">
+                <uicomponents:ControlMenuBlock />
             </Border>
             
             <!-- Text Pagination Controls -->
@@ -104,12 +63,12 @@
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
 
-                <Button Margin="10 0 0 0" Padding="7">
-                    PrevPage
+                <Button Margin="10 0 0 0" Padding="7 10">
+                    <Path Fill="{StaticResource ThemeBackground}" Data="m 22.992468 7.00493 h -2.965 l -0.035 1 h -4 l 1.154 1 h 5.846 z m -3 6 v -2 h -2.789 l -1.206 2 z m -8 4 v -1 l -0.428 1 z m 1 0 h 11 v -2 h -11 z m 12 0 h 20 v -2 h -20 z m 21 0 h 7 v -2 h -7 z m 8 0 h 12 v -2 h -12 z m -27 -6 h -6 v 2 h 6 z m 14 2 v -2 h -13 v 2 z m 11 -2 h -10 v 2 h 10 z m 10 0 h -9 v 2 h 9 z m 1 0 v 2 h 10 v -2 z m -19 -4 h -20 v 2 h 20 z m 22 0 h -21 v 2 h 21 z m -39 -2 v -2 h -7.324 l 0.37 2 z m 14 -2 h -13 v 2 h 13 z m 27 0 h -26 v 2 h 26 z m -54.239 4.843 -3.601 3.663 c 0 0 0 -1.594 0 -3.498 0 -5.133 4.911 -4.181 4.911 -1.252 -0.01 0.11 3.824 -0.022 3.929 0 0 -8.601 -12.769 -9.824 -12.769 1.223 0 1.876 0 3.527 0 3.527 l -3.602 -3.83 -2.619 2.831 8.185 8.493 8.186 -8.493 z"/>
                 </Button>
 
-                <Button Grid.Column="1" Margin="10 0 0 0" Padding="7" IsEnabled="False">
-                    NextPage
+                <Button Grid.Column="1" Margin="10 0 0 0" Padding="7 10" IsEnabled="False">
+                    <Path Fill="{StaticResource ThemeBackground}" Data="m 8.99777 2.66161 h -9 v 2 h 9 z m 6 4 h -15 v 2 h 15 z m -3 4 h -12 v 2 h 12 z m -12 6 h 4 v -2 h -4 z m 5 0 h 11 v -2 h -11 z m 12 0 h 20 v -2 h -20 z m 21 0 h 7 v -2 h -7 z m 8 -2 v 2 h 8.992 l -1.848 -2 z m -33 -2 h 6 v -2 h -6 z m 20 0 v -2 h -13 v 2 z m 11 -2 h -10 v 2 h 10 z m 5.018 0 h -4.018 v 2 h 6.069 z m -13.018 -4 h -20 v 2 h 20 z m 15 1 h -4 l 0.034 -1 h -10.034 v 2 h 12.869 z m -32 -5 h -9 v 2 h 9 z m 14 0 h -13 v 2 h 13 z m 14.705 0 h -13.705 v 2 h 12.976 z m 16.962 4.906 -3.667 3.774 c 0 0 0 -1.627 0 -3.476 0 -10.882 -13 -9.677 -13 -1.204 0.106 -0.021 4.01 0.108 4 0 0 -2.885 5 -3.824 5 1.233 0 1.876 0 3.446 0 3.446 l -3.667 -3.609 -2.666 2.625 8.333 8.367 8.333 -8.367 z" />
                 </Button>
             </Grid>
         </Grid>
@@ -184,12 +143,12 @@
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
 
-                <Button Margin="0 0 10 0" Padding="7" IsEnabled="False">
-                    PrevPage
+                <Button Margin="0 0 10 0" Padding="15 9" IsEnabled="False">
+                    <Path Fill="{StaticResource ThemeBackground}" Data="m 37.0053 0.02787 h -17 c -1.104 0 -2 0.896 -2 2 v 5 c 0 1.104 0.896 2 2 2 h 17 c 1.104 0 2 -0.896 2 -2 v -5 c 0 -1.104 -0.896 -2 -2 -2 z m -21 20 v -5.999 l -3 -3.999 3 -4.008 v -5.994 l -8 10 z m -8 -14.006 v -5.994 l -8 10 8 10 v -5.999 l -3 -3.999 z m 29 5.006 h -17 c -1.104 0 -2 0.896 -2 2 v 5 c 0 1.104 0.896 2 2 2 h 17 c 1.104 0 2 -0.896 2 -2 v -5 c 0 -1.104 -0.896 -2 -2 -2 z m 23 -11 h -17 c -1.104 0 -2 0.896 -2 2 v 5 c 0 1.104 0.896 2 2 2 h 17 c 1.104 0 2 -0.896 2 -2 v -5 c 0 -1.104 -0.896 -2 -2 -2 z m 0 11 h -17 c -1.104 0 -2 0.896 -2 2 v 5 c 0 1.104 0.896 2 2 2 h 17 c 1.104 0 2 -0.896 2 -2 v -5 c 0 -1.104 -0.896 -2 -2 -2 z" />
                 </Button>
 
-                <Button Grid.Column="1" Margin="0 0 10 0" Padding="7" IsEnabled="False">
-                    NextPage
+                <Button Grid.Column="1" Margin="0 0 10 0" Padding="15 9" IsEnabled="True">
+                    <Path Fill="{StaticResource ThemeBackground}" Data="m 42.0164 11.00022 h -17 c -1.104 0 -2 0.896 -2 2 v 5 c 0 1.104 0.896 2 2 2 h 17 c 1.104 0 2 -0.896 2 -2 v -5 c 0 -1.104 -0.896 -2 -2 -2 z m 4 -11 v 5.999 l 3 3.999 -3 4.008 v 5.994 l 8 -10 z m 8 0 v 5.999 l 3 3.999 -3 4.008 v 5.994 l 8 -10 z m -12 0 h -17 c -1.104 0 -2 0.896 -2 2 v 5 c 0 1.104 0.896 2 2 2 h 17 c 1.104 0 2 -0.896 2 -2 v -5 c 0 -1.104 -0.896 -2 -2 -2 z m -23 11 h -17 c -1.104 0 -2 0.896 -2 2 v 5 c 0 1.104 0.896 2 2 2 h 17 c 1.104 0 2 -0.896 2 -2 v -5 c 0 -1.104 -0.896 -2 -2 -2 z m 0 -11 h -17 c -1.104 0 -2 0.896 -2 2 v 5 c 0 1.104 0.896 2 2 2 h 17 c 1.104 0 2 -0.896 2 -2 v -5 c 0 -1.104 -0.896 -2 -2 -2 z" />
                 </Button>
             </Grid>
         </Grid>
