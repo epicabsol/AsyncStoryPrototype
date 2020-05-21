@@ -58,6 +58,7 @@
     <Compile Include="UIComponents\ControlMenuBlock.xaml.cs">
       <DependentUpon>ControlMenuBlock.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UIComponents\PathButton.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
