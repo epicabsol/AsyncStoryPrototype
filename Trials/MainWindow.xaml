@@ -1,0 +1,173 @@
+﻿<Window x:Class="Trials.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Trials"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="561.562" Width="935">
+    <Grid Background="{StaticResource ThemeBackground}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Left Column -->
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Info Header -->
+            <Border Background="{StaticResource ThemeForeground}" Padding="0 5 10 0">
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="200px" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Border Background="{StaticResource ThemeAccent}" Margin="0 0 0 5" Padding="5 0">
+                        <Grid>
+                            <TextBlock Text="THE&#x0a;PAST" HorizontalAlignment="Right" TextAlignment="Right" VerticalAlignment="Bottom" FontSize="48" TextWrapping="Wrap" />
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Row="1" Background="{StaticResource ThemeAccent}" Margin="0 0 0 5" Padding="5 0">
+                        <TextBlock Text="PLANET: TERRA" TextAlignment="Right" />
+                    </Border>
+
+                    <Border Grid.Row="2" Background="{StaticResource ThemeAccent}" Margin="0 0 0 5" Padding="5 0">
+                        <TextBlock Text="SYSTEM: SOL" TextAlignment="Right" />
+                    </Border>
+                </Grid>
+            </Border>
+        
+            <!-- Left Content (Map, Enemy Combatants...) -->
+            <Border Grid.Row="1" Background="{StaticResource ThemeForeground}" />
+            
+            <!-- System Controls (Menu, SaveLoad, LevelUp, Appearance...) -->
+            <Border Grid.Row="2" Background="{StaticResource ThemeForeground}" Padding="10 5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="2*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.Resources>
+                        <Style TargetType="Button" BasedOn="{StaticResource SystemButton}">
+                            <Setter Property="Margin" Value="1" />
+                            <Setter Property="Width" Value="32px" />
+                            <Setter Property="Height" Value="32px" />
+                        </Style>
+                    </Grid.Resources>
+
+                    <Button>
+                        Menu
+                    </Button>
+                    <Button Grid.Column="1">
+                        Data
+                    </Button>
+                    <Button Grid.Column="2">
+                        Down?
+                    </Button>
+                    <Button Grid.Column="3" Grid.RowSpan="2" Width="66px" Height="66px">
+                        Appearance
+                    </Button>
+
+                    <Button Grid.Row="1" Grid.Column="0">
+                        Messg.
+                    </Button>
+                    <Button Grid.Row="1" Grid.Column="1">
+                        Perks
+                    </Button>
+                    <Button Grid.Row="1" Grid.Column="2">
+                        LvUp
+                    </Button>
+                </Grid>
+            </Border>
+            
+            <!-- Text Pagination Controls -->
+            <Grid Grid.Row="3" Margin="0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Margin="10 0 0 0" Padding="7">
+                    PrevPage
+                </Button>
+
+                <Button Grid.Column="1" Margin="10 0 0 0" Padding="7" IsEnabled="False">
+                    NextPage
+                </Button>
+            </Grid>
+        </Grid>
+        
+        <!-- Center Column -->
+        <Grid Grid.Column="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- Main Content -->
+            <TextBlock Text="Hello There!" />
+            
+            <!-- Button Grid -->
+            <Grid Grid.Row="1" Margin="-10 0 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="48px" />
+                    <RowDefinition Height="48px" />
+                    <RowDefinition Height="48px" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Grid.Resources>
+                    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                        <Setter Property="Margin" Value="10 10 0 0" />
+                    </Style>
+                </Grid.Resources>
+
+                <Button>Talk</Button>
+                <Button Grid.Column="1" IsEnabled="False">Locked</Button>
+                <Button Grid.Column="2" IsEnabled="False"></Button>
+                <Button Grid.Column="3" IsEnabled="False"></Button>
+                <Button Grid.Column="4" IsEnabled="False"></Button>
+
+                <Button Grid.Row="1" IsEnabled="False"></Button>
+                <Button Grid.Row="1" Grid.Column="1" IsEnabled="False" Background="{StaticResource ThemeAccent}"></Button>
+                <Button Grid.Row="1" Grid.Column="2" IsEnabled="False"></Button>
+                <Button Grid.Row="1" Grid.Column="3" IsEnabled="False"></Button>
+                <Button Grid.Row="1" Grid.Column="4" IsEnabled="False"></Button>
+
+                <Button Grid.Row="2" IsEnabled="False" Background="{StaticResource ThemeAccent}"></Button>
+                <Button Grid.Row="2" Grid.Column="1" IsEnabled="False" Background="{StaticResource ThemeAccent}"></Button>
+                <Button Grid.Row="2" Grid.Column="2" IsEnabled="False" Background="{StaticResource ThemeAccent}"></Button>
+                <Button Grid.Row="2" Grid.Column="3" IsEnabled="False"></Button>
+                <Button Grid.Row="2" Grid.Column="4" IsEnabled="True">Back</Button>
+            </Grid>
+        </Grid>
+        
+        <!-- Right Column -->
+        <Grid Grid.Column="2">
+            
+        </Grid>
+    </Grid>
+</Window>
