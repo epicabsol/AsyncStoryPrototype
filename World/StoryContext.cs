@@ -24,12 +24,9 @@ namespace AsyncStoryPrototype.World
             while (true)
             {
                 StoryHost.WriteLine("[Room Description]");
-                List<ActionMenuChoice> choices = new List<ActionMenuChoice>
-                {
-                    new ActionMenuChoice("Eat Bread", () => { StoryHost.WriteLine("You eat the bread."); return Task.CompletedTask; })
-                };
 
-                ActionMenuChoice choice = await StoryHost.ShowMenu(choices.ToArray());
+                ActionMenuChoice choice = await StoryHost.ShowMenu(
+                    new ActionMenuChoice("Eat Bread", () => { StoryHost.WriteLine("You eat the bread."); return Task.CompletedTask; }));
 
                 await choice.Handler();
             }
