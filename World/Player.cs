@@ -9,5 +9,11 @@ namespace AsyncStoryPrototype.World
     public class Player
     {
         public string Name { get; set; } = "PlayerName";
+        public string CurrentRoomID { get; set; }
+
+        public Player(string currentRoomID)
+        {
+            this.CurrentRoomID = currentRoomID;
+        }
     }
 }
