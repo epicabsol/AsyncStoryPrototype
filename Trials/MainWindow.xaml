@@ -49,7 +49,18 @@
             </Border>
         
             <!-- Left Content (Map, Enemy Combatants...) -->
-            <Border Grid.Row="1" Background="{StaticResource ThemeForeground}" />
+            <Border Grid.Row="1" Background="{StaticResource ThemeForeground}">
+                <!-- TODO: Pull this content from the active module -->
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <uicomponents:DateTimeBlock Grid.Row="1" />
+                </Grid>
+            </Border>
             
             <!-- System Controls (Menu, SaveLoad, LevelUp, Appearance...) -->
             <Border Grid.Row="2" Background="{StaticResource ThemeForeground}">

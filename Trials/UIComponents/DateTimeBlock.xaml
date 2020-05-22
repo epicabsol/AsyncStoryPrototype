@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="Trials.UIComponents.DateTimeBlock"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Trials.UIComponents"
+             mc:Ignorable="d">
+    <Grid Margin="0 0 10 0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="1px" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <!-- Heading -->
+        <TextBlock Grid.Row="0" Text="GALACTIC STANDARD" Margin="10 0 0 -2" FontFamily="{StaticResource BodyFont}" FontSize="14" FontWeight="Bold" />
+
+        <Border Grid.Row="1" UseLayoutRounding="True" SnapsToDevicePixels="True" Background="{StaticResource ThemeAccent}" />
+
+        <!-- Time -->
+        <Grid Grid.Row="2" Margin="0 0 0 -8">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="TERRAN TIME" Margin="10 0 0 0" FontFamily="{StaticResource AccentFont}" FontSize="30" />
+
+            <TextBlock Grid.Column="2" Text="--:--" FontFamily="{StaticResource AccentFont}" FontSize="30" />
+        </Grid>
+        
+        <!-- Date -->
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="SOLAR DAYS" Margin="10 0 0 0" FontFamily="{StaticResource AccentFont}" FontSize="30" />
+
+            <TextBlock Grid.Column="2" Text="-----" FontFamily="{StaticResource AccentFont}" FontSize="30" />
+        </Grid>
+        
+        <!-- Scene Author -->
+        <Grid Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="SCENE BY: " Margin="10 0 0 0" FontFamily="{StaticResource AccentFont}" FontSize="20" Foreground="Gray" />
+
+            <TextBlock Grid.Column="1" Text="Fenoxo &amp; JimThermic" FontFamily="{StaticResource AccentFont}" FontSize="20" />
+        </Grid>
+    </Grid>
+</UserControl>

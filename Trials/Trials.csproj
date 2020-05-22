@@ -58,6 +58,9 @@
     <Compile Include="UIComponents\ControlMenuBlock.xaml.cs">
       <DependentUpon>ControlMenuBlock.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UIComponents\DateTimeBlock.xaml.cs">
+      <DependentUpon>DateTimeBlock.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UIComponents\PathButton.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -72,6 +75,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UIComponents\ControlMenuBlock.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIComponents\DateTimeBlock.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
