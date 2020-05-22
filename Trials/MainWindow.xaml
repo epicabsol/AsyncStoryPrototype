@@ -106,28 +106,28 @@
                 </Grid.ColumnDefinitions>
 
                 <Grid.Resources>
-                    <Style TargetType="Button" BasedOn="{StaticResource {x:Type Button}}">
+                    <Style TargetType="uicomponents:HotkeyButton" BasedOn="{StaticResource {x:Type uicomponents:HotkeyButton}}">
                         <Setter Property="Margin" Value="10 10 0 0" />
                     </Style>
                 </Grid.Resources>
 
-                <Button>Human</Button>
-                <Button Grid.Column="1" IsEnabled="True">Ausar</Button>
-                <Button Grid.Column="2" IsEnabled="True">Kaithrit</Button>
-                <Button Grid.Column="3" IsEnabled="True">Leithan</Button>
-                <Button Grid.Column="4" IsEnabled="True">Kui-Tan</Button>
+                <uicomponents:HotkeyButton KeyName="1" KeyCode="D1">Human</uicomponents:HotkeyButton>
+                <uicomponents:HotkeyButton KeyName="2" KeyCode="D2" Grid.Column="1" IsEnabled="True">Ausar</uicomponents:HotkeyButton>
+                <uicomponents:HotkeyButton KeyName="3" KeyCode="D3" Grid.Column="2" IsEnabled="True">Kaithrit</uicomponents:HotkeyButton>
+                <uicomponents:HotkeyButton KeyName="4" KeyCode="D4" Grid.Column="3" IsEnabled="True">Leithan</uicomponents:HotkeyButton>
+                <uicomponents:HotkeyButton KeyName="5" KeyCode="D5" Grid.Column="4" IsEnabled="True">Kui-Tan</uicomponents:HotkeyButton>
 
-                <Button Grid.Row="1" IsEnabled="True">Gryvain</Button>
-                <Button Grid.Row="1" Grid.Column="1" IsEnabled="True" Background="{StaticResource ThemeAccent}">Suula</Button>
-                <Button Grid.Row="1" Grid.Column="2" IsEnabled="False"></Button>
-                <Button Grid.Row="1" Grid.Column="3" IsEnabled="False"></Button>
-                <Button Grid.Row="1" Grid.Column="4" IsEnabled="False"></Button>
+                <uicomponents:HotkeyButton KeyName="Q" KeyCode="Q" Grid.Row="1" IsEnabled="True">Gryvain</uicomponents:HotkeyButton>
+                <uicomponents:HotkeyButton KeyName="W" KeyCode="W" Grid.Row="1" Grid.Column="1" IsEnabled="True" Background="{StaticResource ThemeAccent}">Suula</uicomponents:HotkeyButton>
+                <uicomponents:HotkeyButton KeyName="E" KeyCode="E" Grid.Row="1" Grid.Column="2" IsEnabled="False"></uicomponents:HotkeyButton>
+                <uicomponents:HotkeyButton KeyName="R" KeyCode="R" Grid.Row="1" Grid.Column="3" IsEnabled="False"></uicomponents:HotkeyButton>
+                <uicomponents:HotkeyButton KeyName="T" KeyCode="T" Grid.Row="1" Grid.Column="4" IsEnabled="False"></uicomponents:HotkeyButton>
 
-                <Button Grid.Row="2" IsEnabled="False" Background="{StaticResource ThemeAccent}"></Button>
-                <Button Grid.Row="2" Grid.Column="1" IsEnabled="False" Background="{StaticResource ThemeAccent}"></Button>
-                <Button Grid.Row="2" Grid.Column="2" IsEnabled="False" Background="{StaticResource ThemeAccent}"></Button>
-                <Button Grid.Row="2" Grid.Column="3" IsEnabled="False"></Button>
-                <Button Grid.Row="2" Grid.Column="4" IsEnabled="False"></Button>
+                <uicomponents:HotkeyButton KeyName="A" KeyCode="A" Grid.Row="2" IsEnabled="False" Background="{StaticResource ThemeAccent}"></uicomponents:HotkeyButton>
+                <uicomponents:HotkeyButton KeyName="S" KeyCode="S" Grid.Row="2" Grid.Column="1" IsEnabled="False" Background="{StaticResource ThemeAccent}"></uicomponents:HotkeyButton>
+                <uicomponents:HotkeyButton KeyName="D" KeyCode="D" Grid.Row="2" Grid.Column="2" IsEnabled="False" Background="{StaticResource ThemeAccent}"></uicomponents:HotkeyButton>
+                <uicomponents:HotkeyButton KeyName="F" KeyCode="F" Grid.Row="2" Grid.Column="3" IsEnabled="False"></uicomponents:HotkeyButton>
+                <uicomponents:HotkeyButton KeyName="G" KeyCode="G" Grid.Row="2" Grid.Column="4" IsEnabled="False"></uicomponents:HotkeyButton>
             </Grid>
         </Grid>
         

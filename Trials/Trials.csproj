@@ -61,6 +61,7 @@
     <Compile Include="UIComponents\DateTimeBlock.xaml.cs">
       <DependentUpon>DateTimeBlock.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UIComponents\HotkeyButton.cs" />
     <Compile Include="UIComponents\PathButton.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
