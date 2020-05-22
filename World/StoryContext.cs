@@ -12,15 +12,21 @@ namespace AsyncStoryPrototype.World
         public IStoryHost StoryHost { get; }
         public Player Player { get; }
 
-        public Dictionary<string, Room> Rooms { get; } = new Dictionary<string, Room>
-        {
-            { "southshore", new Room("southshore", "South Shore", "You are standing on the warm sands of an unknown island, amongst the smoldering wreckage of your escape pod.", "", "southpath", "", "") },
-            { "southpath", new Room("southpath", "South Path", "Tropical foliage graces the edges of a soft sandy path that spans from the edge of the ocean to further inland.", "southshore", "", "", "") }
-        };
+        public bool HasGatheredStarfish { get; private set; } = false;
+
+        public Dictionary<string, Room> Rooms { get; }
 
         public StoryContext(IStoryHost storyHost)
         {
             this.StoryHost = storyHost;
+
+            Rooms = new Dictionary<string, Room>
+            {
+                { "southshore", new Room("southshore", "South Shore", "You are standing on the warm sands of an unknown island, amongst the smoldering wreckage of your escape pod.", "", "southpath", "", "",
+                    new ActionMenuChoice("Gather Starfish", async () => { StoryHost.WriteLine("You pick up the starfish off the ground"); HasGatheredStarfish = true; await StoryHost.RunMenu(new ActionMenuChoice("Continue", () => Task.CompletedTask)); }, () => !HasGatheredStarfish)) },
+                { "southpath", new Room("southpath", "South Path", "Tropical foliage graces the edges of a soft sandy path that spans from the edge of the ocean to further inland.", "southshore", "", "", "") }
+            };
+
             this.Player = new Player("southshore");
         }
 

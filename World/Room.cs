@@ -12,6 +12,7 @@ namespace AsyncStoryPrototype.World
         public string ID { get; }
         public string Name { get; }
         public string BodyText { get; }
+        public List<ActionMenuChoice> AdditionalActions { get; }
 
         public string SouthRoomID { get; set; } = "";
         public string NorthRoomID { get; set; } = "";
@@ -20,11 +21,12 @@ namespace AsyncStoryPrototype.World
 
         public Func<StoryContext, ActionMenuChoice[]> ListActionsHandler { get; }
 
-        public Room(string id, string name, string bodyText, string southRoomID = "", string northRoomID = "", string eastRoomID = "", string westRoomID = "")
+        public Room(string id, string name, string bodyText, string southRoomID = "", string northRoomID = "", string eastRoomID = "", string westRoomID = "", params ActionMenuChoice[] additionalActions)
         {
             this.ID = id;
             this.Name = name;
             this.BodyText = bodyText;
+            this.AdditionalActions = new List<ActionMenuChoice>(additionalActions);
             this.SouthRoomID = southRoomID;
             this.NorthRoomID = northRoomID;
             this.EastRoomID = eastRoomID;
@@ -52,6 +54,8 @@ namespace AsyncStoryPrototype.World
             {
                 choices.Add(new ActionMenuChoice("West", async () => await context.MoveToRoom(WestRoomID)));
             }
+
+            choices.AddRange(this.AdditionalActions);
 
             return choices.ToArray();
         }

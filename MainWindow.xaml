@@ -19,7 +19,7 @@
         <ItemsControl x:Name="MenuItemsControl" Grid.Row="1">
             <ItemsControl.ItemTemplate>
                 <DataTemplate DataType="{x:Type storycore:MenuChoice}">
-                    <Button Content="{Binding Text}" Tag="{Binding}" Click="MenuChoiceButton_Click" />
+                    <Button Content="{Binding Text}" Tag="{Binding}" Click="MenuChoiceButton_Click" IsEnabled="{Binding IsEnabled}" />
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
