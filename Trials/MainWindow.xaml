@@ -34,16 +34,16 @@
 
                     <Border Background="{StaticResource ThemeAccent}" Margin="0 0 0 5" Padding="5 0">
                         <Grid>
-                            <TextBlock Text="THE&#x0a;PAST" FontFamily="{StaticResource AccentFont}" FontSize="36" HorizontalAlignment="Right" TextAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" />
+                            <TextBlock Text="THE&#x0a;PAST" FontFamily="{StaticResource AccentFont}" FontSize="37" LineHeight="38" LineStackingStrategy="BlockLineHeight" SnapsToDevicePixels="True" UseLayoutRounding="True" HorizontalAlignment="Right" TextAlignment="Right" VerticalAlignment="Bottom" TextWrapping="Wrap" Effect="{StaticResource TitleDropShadow}" />
                         </Grid>
                     </Border>
 
                     <Border Grid.Row="1" Background="{StaticResource ThemeAccent}" Margin="0 0 0 5" Padding="5 0">
-                        <TextBlock Text="PLANET: TERRA" FontFamily="{StaticResource AccentFont}" FontSize="19" TextAlignment="Right" Margin="0 -1" />
+                        <TextBlock Text="PLANET: TERRA" FontFamily="{StaticResource AccentFont}" FontSize="21" TextAlignment="Right" Margin="0 0 0 -1" Effect="{StaticResource TitleDropShadow}" />
                     </Border>
 
                     <Border Grid.Row="2" Background="{StaticResource ThemeAccent}" Margin="0 0 0 5" Padding="5 0">
-                        <TextBlock Text="SYSTEM: SOL" FontFamily="{StaticResource AccentFont}" FontSize="19" TextAlignment="Right" Margin="0 -1" />
+                        <TextBlock Text="SYSTEM: SOL" FontFamily="{StaticResource AccentFont}" FontSize="21" TextAlignment="Right" Margin="0 0 0 -1" Effect="{StaticResource TitleDropShadow}" />
                     </Border>
                 </Grid>
             </Border>

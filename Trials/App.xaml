@@ -6,13 +6,20 @@
              xmlns:local="clr-namespace:Trials"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <SolidColorBrush x:Key="ThemeText" Color="White" />
-        <SolidColorBrush x:Key="ThemeBackground" Color="#3d5174" />
-        <SolidColorBrush x:Key="ThemeForeground" Color="#333e52" />
-        <SolidColorBrush x:Key="ThemeAccent" Color="#8c31b0" />
+        <Color x:Key="ThemeTextColor">White</Color>
+        <Color x:Key="ThemeBackgroundColor">#3d5174</Color>
+        <Color x:Key="ThemeForegroundColor">#333e52</Color>
+        <Color x:Key="ThemeAccentColor">#8c31b0</Color>
+        
+        <SolidColorBrush x:Key="ThemeText" Color="{StaticResource ThemeTextColor}" />
+        <SolidColorBrush x:Key="ThemeBackground" Color="{StaticResource ThemeBackgroundColor}" />
+        <SolidColorBrush x:Key="ThemeForeground" Color="{StaticResource ThemeForegroundColor}" />
+        <SolidColorBrush x:Key="ThemeAccent" Color="{StaticResource ThemeAccentColor}" />
 
         <sys:Double x:Key="GutterSize">10</sys:Double>
         <sys:Double x:Key="DisabledOpacity">0.3</sys:Double>
+
+        <DropShadowEffect x:Key="TitleDropShadow" BlurRadius="5" ShadowDepth="0" Direction="0" Opacity="1.0" Color="{StaticResource ThemeBackgroundColor}" />
 
         <!-- To create geometry for a glyph, ungroup all groups and merge all paths, save from Inkscape as a XAML, enable Silverlight compat, copypaste the Geometry tag, and then remove unnescessary attributes. -->
         <Geometry x:Key="TextPreviousGlyph">m 22.992468 7.00493 h -2.965 l -0.035 1 h -4 l 1.154 1 h 5.846 z m -3 6 v -2 h -2.789 l -1.206 2 z m -8 4 v -1 l -0.428 1 z m 1 0 h 11 v -2 h -11 z m 12 0 h 20 v -2 h -20 z m 21 0 h 7 v -2 h -7 z m 8 0 h 12 v -2 h -12 z m -27 -6 h -6 v 2 h 6 z m 14 2 v -2 h -13 v 2 z m 11 -2 h -10 v 2 h 10 z m 10 0 h -9 v 2 h 9 z m 1 0 v 2 h 10 v -2 z m -19 -4 h -20 v 2 h 20 z m 22 0 h -21 v 2 h 21 z m -39 -2 v -2 h -7.324 l 0.37 2 z m 14 -2 h -13 v 2 h 13 z m 27 0 h -26 v 2 h 26 z m -54.239 4.843 -3.601 3.663 c 0 0 0 -1.594 0 -3.498 0 -5.133 4.911 -4.181 4.911 -1.252 -0.01 0.11 3.824 -0.022 3.929 0 0 -8.601 -12.769 -9.824 -12.769 1.223 0 1.876 0 3.527 0 3.527 l -3.602 -3.83 -2.619 2.831 8.185 8.493 8.186 -8.493 z</Geometry>
