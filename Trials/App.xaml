@@ -26,6 +26,9 @@
         <Geometry x:Key="MessengerGlyph">M 20.635 5.365 22 4 C 22 4 22 2 21 0.999 20 -0.001 18 0 18 0 l -1.381 1.382 c 0.786 0.466 1.556 1.046 2.268 1.754 0.705 0.701 1.281 1.457 1.748 2.229 z M 8.887 13.137 c 0.705 0.7 1.281 1.456 1.748 2.229 L 19.481 6.52 C 19.098 5.706 18.557 4.899 17.829 4.171 17.101 3.443 16.294 2.902 15.481 2.52 l -8.862 8.861 c 0.786 0.468 1.555 1.047 2.268 1.756 z M 5.48 12.52 5 13 v 4 H 9 L 9.48 16.52 C 9.097 15.707 8.556 14.9 7.829 14.171 7.101 13.444 6.294 12.903 5.48 12.52 Z M 19 18.999 H 3 v -16 h 7.009 l 3 -3 H 2 C 0.896 -0.001 0 0.895 0 2 V 19.999 C 0 21.105 0.896 22 2 22 h 18 c 1.104 0 2 -0.895 2 -2.001 V 8.961 l -3 3.038 z</Geometry>
         <Geometry x:Key="PerksGlyph">m 12.772228 0.04595498 4.202 7.54200002 8.547 1.6250002 -5.95 6.2859998 1.08 8.546 -7.879 -3.657 -7.8790005 3.657 1.08 -8.546 L 0.02422752 9.2129552 8.5712277 7.587955 12.772228 0.04595498</Geometry>
         <Geometry x:Key="LevelUpGlyph">m 16 13.0066 v -4 h -4 v 4 H 8 v 4 h 4 v 4 h 4 v -4 h 4 v -4 z m -7 -6 H 6 v -3 H 3 v 3 H 0 v 3 h 3 v 3 h 3 v -3 h 3 z m 2 -1 h 2 v -2 h 2 v -2 h -2 v -2 h -2 v 2 H 9 v 2 h 2 z</Geometry>
+
+        <FontFamily x:Key="AccentFont">./Resources/#Univers UltraCondensed</FontFamily>
+        <FontFamily x:Key="BodyFont">./Resources/#Lato</FontFamily>
         
         <!-- TextBlock -->
         <Style TargetType="TextBlock">
@@ -38,6 +41,9 @@
             <Setter Property="Background" Value="{StaticResource ThemeForeground}" />
             <Setter Property="TextBlock.Foreground" Value="{StaticResource ThemeText}" />
             <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="FontFamily" Value="{StaticResource BodyFont}" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontSize" Value="21" />
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="Button">
