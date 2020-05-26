@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AsyncStoryPrototype.World
+namespace ExplorationStory.World
 {
     public class Player
     {

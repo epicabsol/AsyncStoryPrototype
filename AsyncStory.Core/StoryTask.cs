@@ -30,7 +30,7 @@ namespace AsyncStory.Core
         protected Action Continuation { get; set; }
         protected TResult Result { get; set; }
 
-        public void OnCompleted(Action continuation)
+        public virtual void OnCompleted(Action continuation)
         {
             this.Continuation = continuation;
         }

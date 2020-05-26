@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AsyncStoryPrototype.World
+namespace ExplorationStory.World
 {
     public class Room
     {
@@ -56,6 +56,8 @@ namespace AsyncStoryPrototype.World
             }
 
             choices.AddRange(this.AdditionalActions);
+
+            choices.AddRange(context.ListPlayerActions());
 
             return choices.ToArray();
         }
