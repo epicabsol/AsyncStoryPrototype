@@ -11,7 +11,6 @@ namespace ExplorationStory.World
     {
         public string ID { get; }
         public string Name { get; }
-        public string BodyText { get; }
         public List<ActionMenuChoice> AdditionalActions { get; }
 
         public string SouthRoomID { get; set; } = "";
@@ -19,23 +18,35 @@ namespace ExplorationStory.World
         public string EastRoomID { get; set; } = "";
         public string WestRoomID { get; set; } = "";
 
-        public Func<StoryContext, ActionMenuChoice[]> ListActionsHandler { get; }
+        // Callbacks for individual instances to override behavior
+        private Func<StoryContext, ActionMenuChoice[]> ListActionsHandler { get; }
+        private Func<StoryContext, string> BodyTextHandler { get; }
 
-        public Room(string id, string name, string bodyText, string southRoomID = "", string northRoomID = "", string eastRoomID = "", string westRoomID = "", params ActionMenuChoice[] additionalActions)
+        public Room(string id, string name, string bodyText, string southRoomID = "", string northRoomID = "", string eastRoomID = "", string westRoomID = "", params ActionMenuChoice[] additionalActions) : this(id, name, southRoomID, northRoomID, eastRoomID, westRoomID, null, (_) => bodyText, additionalActions)
+        {
+
+        }
+
+        public Room(string id, string name, string southRoomID, string northRoomID, string eastRoomID, string westRoomID, Func<StoryContext, ActionMenuChoice[]> listActionsHandler = null, Func<StoryContext, string> bodyTextHandler = null, params ActionMenuChoice[] additionalActions)
         {
             this.ID = id;
             this.Name = name;
-            this.BodyText = bodyText;
-            this.AdditionalActions = new List<ActionMenuChoice>(additionalActions);
+            this.AdditionalActions = new List<ActionMenuChoice>();
             this.SouthRoomID = southRoomID;
             this.NorthRoomID = northRoomID;
             this.EastRoomID = eastRoomID;
             this.WestRoomID = westRoomID;
-
-            this.ListActionsHandler = this.ListActions;
+            this.ListActionsHandler = listActionsHandler ?? DefaultListActions;
+            this.BodyTextHandler = bodyTextHandler ?? DefaultBodyText;
+            this.AdditionalActions = new List<ActionMenuChoice>(additionalActions);
         }
 
-        protected virtual ActionMenuChoice[] ListActions(StoryContext context)
+        public ActionMenuChoice[] ListActions(StoryContext context)
+        {
+            return ListActionsHandler(context);
+        }
+
+        protected virtual ActionMenuChoice[] DefaultListActions(StoryContext context)
         {
             List<ActionMenuChoice> choices = new List<ActionMenuChoice>();
             if (NorthRoomID != "")
@@ -60,6 +71,16 @@ namespace ExplorationStory.World
             choices.AddRange(context.ListPlayerActions());
 
             return choices.ToArray();
+        }
+
+        public string GetBodyText(StoryContext context)
+        {
+            return BodyTextHandler(context);
+        }
+
+        protected virtual string DefaultBodyText(StoryContext context)
+        {
+            return "";
         }
     }
 }
