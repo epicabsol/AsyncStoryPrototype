@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 using AsyncStory.Core;
 using ExplorationStory;
 using ExplorationStory.World;
@@ -29,29 +30,51 @@ namespace AsyncStoryPrototypeConsole
 
                 int i = 0;
                 Console.WriteLine();
+                Dictionary<string, MenuChoice> choices = new Dictionary<string, MenuChoice>();
                 foreach (MenuChoice choice in Options)
                 {
+                    string key = (i + 1).ToString();
+                    int colorIndex = 255;
                     if (!choice.IsEnabled)
                     {
-                        using (ColorContext cc = new ColorContext(246))
-                        {
-                            Console.WriteLine("   " + choice.Text);
-                        }
+                        key = "".PadLeft(key.Length, ' ');
+                        colorIndex = 246;
+                    }
+                    else if (choice.Semantic == MenuChoiceSemantic.MoveNorth)
+                    {
+                        key = "W";
+                    }
+                    else if (choice.Semantic == MenuChoiceSemantic.MoveSouth)
+                    {
+                        key = "S";
+                    }
+                    else if (choice.Semantic == MenuChoiceSemantic.MoveEast)
+                    {
+                        key = "D";
+                    }
+                    else if (choice.Semantic == MenuChoiceSemantic.MoveWest)
+                    {
+                        key = "A";
                     }
                     else
                     {
-                        Console.WriteLine((i + 1) + ": " + choice.Text);
+                        i++;
                     }
 
-                    i++;
+                    using (ColorContext cc = new ColorContext(colorIndex))
+                    {
+                        Console.WriteLine(key + ": " + choice.Text);
+                    }
+                    choices.Add(key, choice);
                 }
 
-                Console.Write("? ");
-                if (Int32.TryParse(Console.ReadLine(), out int choiceIndex))
+                string input = "";
+                while (!choices.ContainsKey(input))
                 {
-                    Console.WriteLine();
-                    this.Resume(Options[choiceIndex - 1]);
+                    Console.Write("? ");
+                    input = Console.ReadLine().ToUpperInvariant();
                 }
+                this.Resume(choices[input]);
             }
         }
 

@@ -51,19 +51,19 @@ namespace ExplorationStory.World
             List<ActionMenuChoice> choices = new List<ActionMenuChoice>();
             if (NorthRoomID != "")
             {
-                choices.Add(new ActionMenuChoice("North", async () => await context.MoveToRoom(NorthRoomID)));
+                choices.Add(new ActionMenuChoice("North", async () => await context.MoveToRoom(NorthRoomID), MenuChoiceSemantic.MoveNorth));
             }
             if (SouthRoomID != "")
             {
-                choices.Add(new ActionMenuChoice("South", async () => await context.MoveToRoom(SouthRoomID)));
+                choices.Add(new ActionMenuChoice("South", async () => await context.MoveToRoom(SouthRoomID), MenuChoiceSemantic.MoveSouth));
             }
             if (EastRoomID != "")
             {
-                choices.Add(new ActionMenuChoice("East", async () => await context.MoveToRoom(EastRoomID)));
+                choices.Add(new ActionMenuChoice("East", async () => await context.MoveToRoom(EastRoomID), MenuChoiceSemantic.MoveEast));
             }
             if (WestRoomID != "")
             {
-                choices.Add(new ActionMenuChoice("West", async () => await context.MoveToRoom(WestRoomID)));
+                choices.Add(new ActionMenuChoice("West", async () => await context.MoveToRoom(WestRoomID), MenuChoiceSemantic.MoveWest));
             }
 
             choices.AddRange(this.AdditionalActions);

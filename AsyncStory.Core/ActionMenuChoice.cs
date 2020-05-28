@@ -10,7 +10,7 @@ namespace AsyncStory.Core
     {
         private Func<Task> Handler { get; }
 
-        public ActionMenuChoice(string text, Func<Task> handler, Func<bool> isEnabledHandler = null) : base(text, isEnabledHandler)
+        public ActionMenuChoice(string text, Func<Task> handler, MenuChoiceSemantic semantic, Func<bool> isEnabledHandler = null) : base(text, semantic, isEnabledHandler)
         {
             this.Handler = handler;
         }
